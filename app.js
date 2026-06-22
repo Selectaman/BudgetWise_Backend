@@ -29,5 +29,8 @@ app.use("/api/v1/transactions",transactionRouter);
 
 app.use(errorHandler);
 
-const port = 8000
-app.listen(port, () => console.log(`Serving on: http://localhost:${port}`))
+const port = process.env.PORT || 8000;
+
+app.listen(port, () =>
+  console.log(`Server running on port ${port}`)
+);
