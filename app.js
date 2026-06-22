@@ -14,7 +14,14 @@ mongoose.connect("mongodb+srv://user1:pass1@cluster1.ddwffa4.mongodb.net/Gaurang
 .then(() => console.log("DB Connected"))
 .catch((e) => console.log(e));
 
-app.use(cors({origin:["http://localhost:5173"]}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://budget-wise-frontend.vercel.app"
+    ]
+  })
+);
 app.use(express.json());
 
 app.use("/api/v1/users",userRouter);
